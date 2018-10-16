@@ -21,37 +21,33 @@ export class TutorialPage {
 
   constructor(public navCtrl: NavController, public menu: MenuController, translate: TranslateService, public platform: Platform) {
     this.dir = platform.dir();
-    translate.get(["TUTORIAL_SLIDE1_TITLE",
-      "TUTORIAL_SLIDE1_DESCRIPTION",
-      "TUTORIAL_SLIDE2_TITLE",
-      "TUTORIAL_SLIDE2_DESCRIPTION",
-      "TUTORIAL_SLIDE3_TITLE",
-      "TUTORIAL_SLIDE3_DESCRIPTION",
-    ]).subscribe(
-      (values) => {
-        console.log('Loaded values', values);
-        this.slides = [
-          {
-            title: values.TUTORIAL_SLIDE1_TITLE,
-            description: values.TUTORIAL_SLIDE1_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-1.png',
-          },
-          {
-            title: values.TUTORIAL_SLIDE2_TITLE,
-            description: values.TUTORIAL_SLIDE2_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-2.png',
-          },
-          {
-            title: values.TUTORIAL_SLIDE3_TITLE,
-            description: values.TUTORIAL_SLIDE3_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-3.png',
-          }
-        ];
-      });
+    // translate.get(["TUTORIAL_SLIDE1_TITLE",
+    //   "TUTORIAL_SLIDE1_DESCRIPTION",
+    //   "TUTORIAL_SLIDE2_TITLE",
+    //   "TUTORIAL_SLIDE2_DESCRIPTION",
+    //   "TUTORIAL_SLIDE3_TITLE",
+    //   "TUTORIAL_SLIDE3_DESCRIPTION",
+    // ]).subscribe(
+    //   (values) => {
+        // console.log('Loaded values', values);
+    this.slides = [
+      {
+        title: 'Selecting the next book to read is difficult',
+        description: '',
+        image: 'assets/img/tutorial-slide-1.jpg',
+      },
+      {
+        title: 'Naturally, here\'s a fucking app to fix that unique existensial problem',
+        description: 'Oh, did you know that you can click on the link below to buy the book you liked and make me some money? ' +
+          'You should totally do it! <a href="https://www.youtube.com/watch?v=GlKL_EpnSp8" target="_blank">Read a motherfucking book.</a>',
+        image: 'assets/img/ica-slidebox-img-2.png',
+      },
+    ];
+      // });
   }
 
   startApp() {
-    this.navCtrl.setRoot('WelcomePage', {}, {
+    this.navCtrl.setRoot('QuotesPage', {}, {
       animate: true,
       direction: 'forward'
     });
