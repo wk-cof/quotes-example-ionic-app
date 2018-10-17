@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import _ from 'lodash';
 import text1 from '../../assets/txt/sample-text-1';
 import text2 from '../../assets/txt/sample-text-2';
 import text3 from '../../assets/txt/sample-text-3';
@@ -32,6 +32,30 @@ export class QuotesPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuotesPage');
+  }
+
+  processQuotesText(quotes) {
+    _.map(quotes, quote => {
+      return quote.text;
+    });
+  }
+
+  nextQuote() {
+    this.currentQuote ++;
+    if (this.currentQuote >= this.quotes.length) {
+      this.currentQuote = 0;
+    }
+  }
+
+  prevQuote() {
+    this.currentQuote --;
+    if (this.currentQuote < 0) {
+      this.currentQuote = 0;
+    }
+  }
+
+  fullLinkBtnClick() {
+    console.log('clicked')
   }
 
 }
