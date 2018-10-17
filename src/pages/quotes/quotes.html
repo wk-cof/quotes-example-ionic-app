@@ -7,12 +7,30 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>quotes</ion-title>
+    <ion-title>Quotes</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="no-scroll">
+    <ion-fab left middle class="left-arrow">
+      <button ion-fab color="light"><ion-icon name="arrow-back"></ion-icon></button>
+    </ion-fab>
+  <ion-fab right middle class="right-arrow">
+    <button ion-fab color="light"><ion-icon name="arrow-forward"></ion-icon></button>
+  </ion-fab>
+  <!-- <ion-content class="card-background-page"> -->
+    <ion-card class="quote-card">
+      <ion-card-content>
+        <ion-card-title>
+          {{quotes[0].title}}
+          </ion-card-title>
+        <p>
+          {{quotes[0].text}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+  <!-- </ion-content> -->
 
 </ion-content>

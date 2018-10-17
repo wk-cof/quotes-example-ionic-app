@@ -1,3 +1,19 @@
 page-quotes {
+    .no-scroll .scroll-content{
+        overflow: hidden;
+    }
 
+    .quote-card {
+        height: 60%;
+        max-width: 80%;
+        margin: 10% 10%;
+    }
+
+    .left-arrow {
+        margin-left: calc(10% - 3rem);
+    }
+
+    .right-arrow {
+        margin-right: calc(10% - 3rem);
+    }
 }
