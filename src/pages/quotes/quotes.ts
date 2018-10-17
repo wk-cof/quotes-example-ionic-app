@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 import _ from 'lodash';
 import text1 from '../../assets/txt/sample-text-1';
 import text2 from '../../assets/txt/sample-text-2';
@@ -55,7 +56,7 @@ export class QuotesPage {
   }
 
   fullLinkBtnClick() {
-    console.log('clicked')
+    window.open(this.quotes[this.currentQuote].url, 'location=_blank');
   }
 
 }
