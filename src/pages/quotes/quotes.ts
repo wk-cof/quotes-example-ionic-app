@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import uuidv1 from 'uuid/v1';
+import firebase from 'firebase';
 import _ from 'lodash';
-import text1 from '../../assets/txt/sample-text-1';
-import text2 from '../../assets/txt/sample-text-2';
-import text3 from '../../assets/txt/sample-text-3';
-import text4 from '../../assets/txt/sample-text-4';
 
 /**
  * Generated class for the QuotesPage page.
@@ -25,10 +22,10 @@ export class QuotesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.quotes = [];
-    this.quotes.push(text1);
-    this.quotes.push(text2);
-    this.quotes.push(text3);
-    this.quotes.push(text4);
+    firebase.database().ref('/quotes').once('value')
+      .then((snapshot) => {
+        this.quotes = _.values(snapshot.val());
+      });
   }
 
   ionViewDidLoad() {
@@ -53,6 +50,15 @@ export class QuotesPage {
     if (this.currentQuote < 0) {
       this.currentQuote = 0;
     }
+  }
+
+  addQuote(title, text, url) {
+    const uuid = uuidv1(title + text + url);
+    firebase.database().ref('quotes/' + uuid).set({
+      title,
+      text,
+      url
+    });
   }
 
   fullLinkBtnClick() {

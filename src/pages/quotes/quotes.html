@@ -20,7 +20,7 @@
   <ion-fab right middle class="right-arrow">
     <button ion-fab color="light" (click)="nextQuote()"><ion-icon name="arrow-forward"></ion-icon></button>
   </ion-fab>
-  <ion-card class="quote-card">
+  <ion-card class="quote-card" *ngIf="quotes.length">
     <ion-card-content>
       <ion-card-title>
         {{quotes[currentQuote].title}}
