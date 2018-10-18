@@ -8,6 +8,7 @@
     "start": "ionic-app-scripts serve",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
+    "build:prod": "ionic-app-scripts build --production",
     "lint": "ionic-app-scripts lint"
   },
   "dependencies": {
