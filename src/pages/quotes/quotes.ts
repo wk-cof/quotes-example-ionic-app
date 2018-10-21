@@ -22,7 +22,7 @@ export class QuotesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.quotes = [];
-    firebase.database().ref('/quotes').once('value')
+    firebase.database().ref('/quotes_ru').once('value')
       .then((snapshot) => {
         this.quotes = _.values(snapshot.val());
       });
@@ -54,7 +54,7 @@ export class QuotesPage {
 
   addQuote(title, text, url) {
     const uuid = uuidv1(title + text + url);
-    firebase.database().ref('quotes/' + uuid).set({
+    firebase.database().ref('quotes_ru/' + uuid).set({
       title,
       text,
       url
