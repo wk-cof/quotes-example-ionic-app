@@ -1,13 +1,20 @@
 page-add-quote {
 
     .add-quote-container {
-        height: 100%;
-    }
-    .title-text {
-        // background: white;
-    }
-    .free-form-text {
-        height: 60%;
-        // background: white;
-    }
+        height: 90%;
+
+        .title-text {
+            // background: white;
+        }
+        .free-form-container {
+            height: 60%;
+            // background: white;
+            .free-form-text {
+                height: 100%;
+                textarea {
+                    height: 100%;
+                }
+            }
+        }
+        }
 }
