@@ -10,6 +10,12 @@ page-quotes {
         box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
     }
 
+    .card-content-md {
+        padding: 30px 50px;
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+
     .no-scroll .scroll-content{
         overflow: hidden;
     }
