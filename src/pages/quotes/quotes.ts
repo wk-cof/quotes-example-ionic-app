@@ -51,8 +51,6 @@ export class QuotesPage {
     }
   }
 
-
-
   addQuote() {
     this.navCtrl.setRoot('AddQuotePage', {}, {
       animate: true,

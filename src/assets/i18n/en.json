@@ -67,5 +67,6 @@
   "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\"",
 
   "QUOTES_TITLE": "Quotes",
-  "LANGUAGE_SELECTION_TITLE": "Language"
+  "LANGUAGE_SELECTION_TITLE": "Language",
+  "FULL_BOOK_BUTTON_NAME": "I'm hooked"
 }
