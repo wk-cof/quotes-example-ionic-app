@@ -44,7 +44,10 @@ page-quotes {
         .right-arrow {
             margin-right: calc(10% - 1rem);
         }
+    }
 
+    .quote-card-text {
+        white-space: pre-line;
     }
 
     .button-container {
