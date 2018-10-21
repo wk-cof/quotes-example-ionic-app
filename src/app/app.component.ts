@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
 
-import { FirstRunPage } from '../pages';
+import { FirstRunPage, MainPage } from '../pages';
 import { Settings } from '../providers';
 
 @Component({
@@ -27,7 +27,8 @@ import { Settings } from '../providers';
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = FirstRunPage;
+  // tslint:disable-next-line:no-unused-variable
+  private rootPage: any;
 
   @ViewChild(Nav) nav: Nav;
 
@@ -44,16 +45,22 @@ export class MyApp {
     { title: 'Menu', component: 'MenuPage' },
     { title: 'Settings', component: 'SettingsPage' },
     { title: 'Search', component: 'SearchPage' }
-  ]
+  ];
 
   constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+    settings.load()
+    .then(() => settings.getValue('SEEN_TUTORIAL'))
+    .then(value => {
+      this.rootPage = value ? MainPage : FirstRunPage;
+      settings.setValue('SEEN_TUTORIAL', true);
+      platform.ready().then(() => {
+        // Okay, so the platform is ready and our plugins are available.
+        // Here you can do any higher level native things you might need.
+        this.statusBar.styleDefault();
+        this.splashScreen.hide();
+      });
+      this.initTranslate();
     });
-    this.initTranslate();
   }
 
   initTranslate() {
