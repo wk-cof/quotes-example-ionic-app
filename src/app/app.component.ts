@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
 
-import { FirstRunPage, MainPage } from '../pages';
+import { FirstRunPage, MainPage, WelcomePage } from '../pages';
 import { Settings } from '../providers';
 
 @Component({
@@ -51,6 +51,7 @@ export class MyApp {
     settings.load()
     .then(() => settings.getValue('SEEN_TUTORIAL'))
     .then(value => {
+      // this.rootPage = value ? WelcomePage : FirstRunPage;
       this.rootPage = value ? MainPage : FirstRunPage;
       settings.setValue('SEEN_TUTORIAL', true);
       platform.ready().then(() => {

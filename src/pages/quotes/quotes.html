@@ -19,24 +19,38 @@
 
 
 <ion-content padding>
-    <ion-fab left middle class="left-arrow">
-      <button ion-fab color="light" (click)="prevQuote()"><ion-icon name="arrow-back"></ion-icon></button>
-    </ion-fab>
-  <ion-fab right middle class="right-arrow">
-    <button ion-fab color="light" (click)="nextQuote()"><ion-icon name="arrow-forward"></ion-icon></button>
+  <ion-fab left middle class="left-arrow">
+    <button ion-fab color="light" (click)="prevQuote()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
   </ion-fab>
-  <ion-card class="quote-card" *ngIf="quotes.length">
-    <ion-card-content>
-      <ion-card-title>
-        {{quotes[currentQuote].title}}
-        </ion-card-title>
-      <p class="quote-card-text">
-        {{quotes[currentQuote].text}}
-      </p>
-    </ion-card-content>
-  </ion-card>
-  <div class="button-container">
-    <button ion-button large color="light" class="full-link-btn" (click)="fullLinkBtnClick()">Full book</button>
-  </div>
+  <ion-fab right middle class="right-arrow">
+    <button ion-fab color="light" (click)="nextQuote()">
+      <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-grid>
+    <ion-row>
+      <!-- <ion-col col-3></ion-col> -->
+      <ion-col offset-lg-3 col-lg-6 col-sm-12 offset-sm-0 >
+        <ion-card class="quote-card" *ngIf="quotes.length">
+          <ion-card-content>
+            <ion-card-title>
+              {{quotes[currentQuote].title}}
+            </ion-card-title>
+            <p class="quote-card-text">
+              {{quotes[currentQuote].text}}
+            </p>
+          </ion-card-content>
+        </ion-card>
+        <div class="button-container">
+          <button ion-button large color="light" class="full-link-btn" (click)="fullLinkBtnClick()">Full book</button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+        <ion-col col-6>This column will take 6 columns</ion-col>
+      </ion-row> -->
+  </ion-grid>
 
 </ion-content>
