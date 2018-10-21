@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import uuidv1 from 'uuid/v1';
-import firebase from 'firebase';
 import _ from 'lodash';
+import firebase from 'firebase';
 
 /**
  * Generated class for the QuotesPage page.
@@ -39,25 +38,25 @@ export class QuotesPage {
   }
 
   nextQuote() {
-    this.currentQuote ++;
+    this.currentQuote++;
     if (this.currentQuote >= this.quotes.length) {
       this.currentQuote = 0;
     }
   }
 
   prevQuote() {
-    this.currentQuote --;
+    this.currentQuote--;
     if (this.currentQuote < 0) {
       this.currentQuote = 0;
     }
   }
 
-  addQuote(title, text, url) {
-    const uuid = uuidv1(title + text + url);
-    firebase.database().ref('quotes_ru/' + uuid).set({
-      title,
-      text,
-      url
+
+
+  addQuote() {
+    this.navCtrl.setRoot('AddQuotePage', {}, {
+      animate: true,
+      direction: 'forward'
     });
   }
 

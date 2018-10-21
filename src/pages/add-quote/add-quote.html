@@ -1,0 +1,35 @@
+<!--
+  Generated template for the AddQuotePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Quote</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list class="add-quote-container" *ngIf="newTask">
+    <ion-item>
+      <ion-label fixed>Title</ion-label>
+      <ion-input type="text" value="" class="title-text" [(ngModel)]="newTask.title"></ion-input>
+    </ion-item>
+    <ion-item class="free-form-text">
+      <ion-label>Text</ion-label>
+      <ion-textarea [(ngModel)]="newTask.text"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>url</ion-label>
+      <ion-input type="text" value="" class="title-text" [(ngModel)]="newTask.url"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div class="button-container">
+    <button ion-button large color="light" class="full-link-btn" (click)="submitNewQuote()">Add Quote</button>
+  </div>
+
+</ion-content>
