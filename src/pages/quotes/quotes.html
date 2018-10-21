@@ -7,16 +7,17 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Quotes</ion-title>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>{{ 'QUOTES_TITLE' | translate }}</ion-title>
     <ion-buttons end>
       <button ion-button icon-only color="royal" (click)="addQuote()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content padding>
   <ion-fab left middle class="left-arrow">
