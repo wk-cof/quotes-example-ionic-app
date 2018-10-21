@@ -68,5 +68,6 @@
 
   "QUOTES_TITLE": "Quotes",
   "LANGUAGE_SELECTION_TITLE": "Language",
-  "FULL_BOOK_BUTTON_NAME": "I'm hooked"
+  "FULL_BOOK_BUTTON_NAME": "I'm hooked",
+  "DATABASE_NAME": "quotes"
 }

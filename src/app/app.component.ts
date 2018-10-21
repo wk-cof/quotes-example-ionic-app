@@ -32,7 +32,7 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
   languages = [
-    { title: 'English', shortVersion: 'gb' },
+    { title: 'English', shortVersion: 'en' },
     { title: 'Russian', shortVersion: 'ru' },
   ]
 
@@ -85,7 +85,10 @@ export class MyApp {
   }
 
   changeLanguage(lang) {
-    this.settings.setValue('LANGUAGE', lang.shortVersion);
-    this.initTranslate();
+    this.settings.setValue('LANGUAGE', lang.shortVersion)
+      .then(() => {
+        this.initTranslate();
+      });
+
   }
 }

@@ -48,5 +48,6 @@
 
   "QUOTES_TITLE": "Цитаты",
   "LANGUAGE_SELECTION_TITLE": "Выбор языка",
-  "FULL_BOOK_BUTTON_NAME": "Хочу читать!"
+  "FULL_BOOK_BUTTON_NAME": "Хочу читать!",
+  "DATABASE_NAME": "quotes_ru"
 }

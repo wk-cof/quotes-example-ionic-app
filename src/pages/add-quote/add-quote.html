@@ -28,8 +28,8 @@
       <ion-input type="text" value="" class="title-text" [(ngModel)]="newTask.url"></ion-input>
     </ion-item>
   </ion-list>
-  <div class="button-container">
-    <button ion-button large color="light" class="full-link-btn" (click)="submitNewQuote()">Add Quote</button>
+  <div class="button-container" >
+    <button ion-button large color="light" class="full-link-btn" (click)="submitNewQuote()" [disabled]="uploading">Add Quote</button>
   </div>
 
 </ion-content>
